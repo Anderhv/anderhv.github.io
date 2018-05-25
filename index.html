@@ -1,19 +1,83 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<script type="text/javascript" src="test.js" ></script>
-</head>
-<body>
 
-<h2>Textarea</h2>
-<p>The textarea element defines a multi-line input field.</p>
+	<head>
+		<meta charset="utf-8">
+ 		<h2>Guitar Classification Test</h2>
 
 
-<form name="myform", id="myform">
-  <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea>
-  <br>
-  <input type="submit">
-</form>
+		<script type="text/javascript" src="main.js" ></script>
+		<title> Guitar Classification Test </title>
 
-</body>
+		<audio id="Fender" preload="auto" autobuffer>
+			<source src="./Audio/Fender_stratocaster/G53-40100-1111-00001.wav" />
+			Your browser does not support the audio element.
+		</audio>
+
+		<style>
+		.button {
+		    background-color: #4CAF50;
+		    border: none;
+		    color: white;
+		    padding: 15px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		}
+		</style>
+
+	</head>
+
+	<body bgcolor="grey" style="margin:20px;">
+
+    
+
+		<!--<script>
+		    function init() 
+		    {
+		    	// Kjøres når alt er klart
+		    	initGUI();
+	        	startGame();
+		    	connect();
+		    }
+		</script> -->
+		<!-- 
+		<p>The textarea element defines a multi-line input field.</p>
+		-->
+		<form action="/action_page.php">
+		  <fieldset>
+		    <legend>Samples:</legend>
+		    <p2>Sample 1:</p2>
+			<button onclick="playAudio()" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar1" value="Fender"> Fender
+  			<input type="radio" name="guitar1" value="Ibanez"> Ibanez<br>
+  			<br>
+		    <p2>Sample 2:</p2>
+			<button onclick="playAudio()" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar2" value="Fender"> Fender
+  			<input type="radio" name="guitar2" value="Ibanez"> Ibanez<br>
+  			<br>
+		    <p2>Sample 3:</p2>
+			<button onclick="playAudio()" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar3" value="Fender"> Fender
+  			<input type="radio" name="guitar3" value="Ibanez"> Ibanez<br>
+  			<br>
+  			Your name:<br>
+  			<input type="text" name="name"><br><br>
+
+			<input type="submit" value="Submit answers">
+
+		  </fieldset>
+		</form>
+
+
+
+	</body>
+
 </html>

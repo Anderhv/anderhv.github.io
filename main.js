@@ -1,50 +1,35 @@
 
+function playAudio(filenumber) {
+	var sound = document.getElementById(filenumber.toString());
+	sound.play()
+};
+
+
+function readSolution() {
+	var solutionRef = firebase.database().ref().child("Solution")
+	var sols = {}
+	solutionRef.on('value',function(datasnapshot){
+		//sols["guitar1"] = datasnapshot.val()["guitar1"]
+		//var g1 = datasnapshot.val()["guitar1"]
+	})
+}
+
+
 window.onload = function() {
-	var form = document.getElementById("asdo");
-	console.log(form);
-	
-var firebaseref = firebase.database().ref();
+	var form = document.getElementById("submissionForm");
+	var firebasedb = firebase.database();
 
 form.onsubmit = function() {
 	var elements = form.elements;
+	var name = form.elements["name"];
+	var submission = {};
+	submission["name"] = name.value;
 	for (var i = 0, element; element = elements[i++];) {
 		if (element.type === "radio" && element.checked)
-			firebaseref.push().set(element.value)
-
+			submission[element.name] = element.value;
 	}
-
-    //var ans1 = form.elements["guitar1"];
-    //var ans2 = form.elements["guitar2"];
-    //var ans1 = form.elements["guitar1"];
-    //var ans1 = form.elements["guitar1"];
-   	//var ans1 = form.elements["guitar1"];
-
-	//firebaseref.child("Ans1").set(ans1.value)
+   	firebasedb.ref().push().set(submission)
 	window.alert("Answer submitted!")
-};
-
-function init() {
-	console.log("Initializing")
-	var lyd1 = document.getElementById("Fender")
-	console.log(lyd1)
 }
-
-function playAudio() {
-	var asd = document.getElementById("Fender");
-	playAudioz(asd)
-} 
-
-	
-function playAudioz(sound) {
-	//var asd = document.getElementById("Fender");
-	sound.play()
-} 
-
-
-function pauseAudio() { 
-	var asd = document.getElementById("Fender");
-
-    asd.pause(); 
-} 
 
 };

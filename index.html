@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+ 		<h1>Guitar Classification Test</h1>
+		<title> Guitar Classification Test </title>
+
+ 		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyDv0IgFmp17vA43-UIBXts4pSZqT4thXeU",
+		    authDomain: "guitarclassification.firebaseapp.com",
+		    databaseURL: "https://guitarclassification.firebaseio.com",
+		    projectId: "guitarclassification",
+		    storageBucket: "",
+		    messagingSenderId: "369135022725"
+		  };
+		  firebase.initializeApp(config);
+		  console.log('Firebase initialized')
+		</script>
+		<script type="text/javascript" src="main.js" ></script>
+
+
+		<audio id="1" preload="auto" autobuffer>
+			<source src="./Audio/file1.wav" />
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="2" preload="auto" autobuffer>
+			<source src="./Audio/file2.wav" />
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="3" preload="auto" autobuffer>
+			<source src="./Audio/file3.wav" />
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="4" preload="auto" autobuffer>
+			<source src="./Audio/file4.wav" />
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="5" preload="auto" autobuffer>
+			<source src="./Audio/file5.wav" />
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="6" preload="auto" autobuffer>
+			<source src="./Audio/file6.wav" />
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="7" preload="auto" autobuffer>
+			<source src="./Audio/file7.wav" />
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="8" preload="auto" autobuffer>
+			<source src="./Audio/file8.wav" />
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="9" preload="auto" autobuffer>
+			<source src="./Audio/file9.wav" />
+			Your browser does not support the audio element.
+		</audio>
+
+		<style>
+		.button {
+		    background-color: #4CAF50;
+		    border: none;
+		    color: white;
+		    padding: 15px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		}
+		</style>
+
+	</head>
+
+	<body bgcolor="grey" style="margin:20px;">
+		<h3>
+		The following samples are played by either a Fender Stratocaster, Ibanez RG 2820 or a Gibson Les Paul.<br>
+		</h3>
+
+		<form id="submissionForm">
+		  <fieldset>
+		    <legend>Samples:</legend>
+		    <p2>Sample 1:</p2>
+			<button onclick="playAudio(1)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar1" value="Fender"> Fender
+  			<input type="radio" name="guitar1" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar1" value="Gibson"> Gibson<br>
+  			<br>
+		    <p2>Sample 2:</p2>
+			<button onclick="playAudio(2)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar2" value="Fender"> Fender
+  			<input type="radio" name="guitar2" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar2" value="Gibson"> Gibson<br>
+  			<br>
+		    <p2>Sample 3:</p2>
+			<button onclick="playAudio(3)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar3" value="Fender"> Fender
+  			<input type="radio" name="guitar3" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar3" value="Gibson"> Gibson<br>
+  			<br>
+  			<p2>Sample 4:</p2>
+			<button onclick="playAudio(4)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar4" value="Fender"> Fender
+  			<input type="radio" name="guitar4" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar4" value="Gibson"> Gibson<br>
+  			<br>
+  			<p2>Sample 5:</p2>
+			<button onclick="playAudio(5)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar5" value="Fender"> Fender
+  			<input type="radio" name="guitar5" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar5" value="Gibson"> Gibson<br>
+  			<br>
+  			<p2>Sample 6:</p2>
+			<button onclick="playAudio(6)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar6" value="Fender"> Fender
+  			<input type="radio" name="guitar6" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar6" value="Gibson"> Gibson<br>
+  			<br>
+  			<p2>Sample 7:</p2>
+			<button onclick="playAudio(7)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar7" value="Fender"> Fender
+  			<input type="radio" name="guitar7" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar7" value="Gibson"> Gibson<br>
+  			<br>
+  			<p2>Sample 8:</p2>
+			<button onclick="playAudio(8)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar8" value="Fender"> Fender
+  			<input type="radio" name="guitar8" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar8" value="Gibson"> Gibson<br>
+  			<br>
+  			<p2>Sample 9:</p2>
+			<button onclick="playAudio(9)" type="button">Play Audio</button>
+			<br>
+		    <input type="radio" name="guitar9" value="Fender"> Fender
+  			<input type="radio" name="guitar9" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar9" value="Gibson"> Gibson<br>
+  			<br>
+  			Your name:<br>
+  			<input type="text" name="name"><br><br>
+			<input type="submit" value="Submit answers">
+
+		  </fieldset>
+		</form>
+
+	</body>
+
+</html>

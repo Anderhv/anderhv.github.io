@@ -1,11 +1,6 @@
 
-function playAudio(filenumber) {
-	var sound = document.getElementById(filenumber.toString());
-	sound.play()
-};
 
-
-function readSolution() {
+/*function readSolution() {
 	var solutionRef = firebase.database().ref().child("Solution")
 	var sols = {}
 	solutionRef.on('value',function(datasnapshot){
@@ -13,10 +8,11 @@ function readSolution() {
 		//var g1 = datasnapshot.val()["guitar1"]
 	})
 }
-
+*/
 
 window.onload = function() {
 	var form = document.getElementById("submissionForm");
+	console.log(form)
 	var firebasedb = firebase.database();
 
 form.onsubmit = function() {
@@ -32,4 +28,9 @@ form.onsubmit = function() {
 	window.alert("Answer submitted!")
 }
 
+};
+
+function playAudio(filenumber) {
+	var sound = document.getElementById(filenumber.toString());
+	sound.play()
 };

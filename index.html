@@ -3,11 +3,29 @@
 
 	<head>
 		<meta charset="utf-8">
- 		<h2>Guitar Classification Test</h2>
+ 		<h1>Guitar Classification Test</h1>
+		<title> Guitar Classification Test </title>
 
+ 		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyDv0IgFmp17vA43-UIBXts4pSZqT4thXeU",
+		    authDomain: "guitarclassification.firebaseapp.com",
+		    databaseURL: "https://guitarclassification.firebaseio.com",
+		    projectId: "guitarclassification",
+		    storageBucket: "",
+		    messagingSenderId: "369135022725"
+		  };
+		  firebase.initializeApp(config);
+		  console.log('Firebase initialized')
+
+
+
+
+		</script>
 
 		<script type="text/javascript" src="main.js" ></script>
-		<title> Guitar Classification Test </title>
 
 		<audio id="Fender" preload="auto" autobuffer>
 			<source src="./Audio/Fender_stratocaster/G53-40100-1111-00001.wav" />
@@ -32,8 +50,9 @@
 	</head>
 
 	<body bgcolor="grey" style="margin:20px;">
-
-    
+		<h3>
+		The following samples are played by either a Fender Stratocaster, Ibanez RG 2820 or a Gibson Les Paul.<br>
+	</h3>
 
 		<!--<script>
 		    function init() 
@@ -47,26 +66,30 @@
 		<!-- 
 		<p>The textarea element defines a multi-line input field.</p>
 		-->
-		<form action="/action_page.php">
+		<form id="asdo">
 		  <fieldset>
 		    <legend>Samples:</legend>
 		    <p2>Sample 1:</p2>
 			<button onclick="playAudio()" type="button">Play Audio</button>
 			<br>
 		    <input type="radio" name="guitar1" value="Fender"> Fender
-  			<input type="radio" name="guitar1" value="Ibanez"> Ibanez<br>
+  			<input type="radio" name="guitar1" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar1" value="Gibson"> Gibson<br>
   			<br>
 		    <p2>Sample 2:</p2>
 			<button onclick="playAudio()" type="button">Play Audio</button>
 			<br>
 		    <input type="radio" name="guitar2" value="Fender"> Fender
-  			<input type="radio" name="guitar2" value="Ibanez"> Ibanez<br>
+  			<input type="radio" name="guitar2" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar2" value="Gibson"> Gibson<br>
   			<br>
 		    <p2>Sample 3:</p2>
 			<button onclick="playAudio()" type="button">Play Audio</button>
 			<br>
 		    <input type="radio" name="guitar3" value="Fender"> Fender
-  			<input type="radio" name="guitar3" value="Ibanez"> Ibanez<br>
+  			<input type="radio" name="guitar3" value="Ibanez"> Ibanez
+  			<input type="radio" name="guitar3" value="Gibson"> Gibson<br>
+
   			<br>
   			Your name:<br>
   			<input type="text" name="name"><br><br>
@@ -75,8 +98,6 @@
 
 		  </fieldset>
 		</form>
-
-
 
 	</body>
 
